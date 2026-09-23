@@ -2,12 +2,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-interface Props {
-  overlay?: boolean;
-}
-
-const { overlay = false } = Astro.props;
-
 const logoPath = path.join(process.cwd(), 'public', 'logo.png');
 const hasLogo = fs.existsSync(logoPath);
 
@@ -23,7 +17,7 @@ const navLinks = [
 
 <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
 
-<header class:list={['header', { 'header--overlay': overlay }]}>
+<header class="header">
   <div class="container header-inner">
     <label for="nav-toggle" class="nav-toggle-btn" aria-label="Abrir menú">
       <span class="bar"></span>
@@ -50,7 +44,7 @@ const navLinks = [
     {navLinks.map((link) => (
       <a href={link.href}>{link.label}</a>
     ))}
-    <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-terracota nav-cta">
+    <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-green nav-cta">
       → Reservar cita
     </a>
   </nav>
@@ -68,21 +62,16 @@ const navLinks = [
   .header {
     position: relative;
     z-index: 40;
-    background-color: var(--color-black);
-  }
-
-  .header--overlay {
-    position: absolute;
-    inset: 0 0 auto 0;
-    background-color: transparent;
+    background-color: var(--color-cream);
+    border-bottom: 1px solid rgba(22, 36, 27, 0.1);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 22px;
-    padding-bottom: 22px;
+    padding-top: 18px;
+    padding-bottom: 18px;
   }
 
   .nav-toggle-btn {
@@ -98,7 +87,7 @@ const navLinks = [
     display: block;
     width: 26px;
     height: 1.5px;
-    background-color: var(--color-cream);
+    background-color: var(--color-ink);
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
@@ -124,7 +113,7 @@ const navLinks = [
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1.15rem;
-    color: var(--color-cream);
+    color: var(--color-green);
     white-space: nowrap;
   }
 
@@ -133,7 +122,8 @@ const navLinks = [
     font-size: 0.62rem;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: var(--color-terracota);
+    color: var(--color-ink);
+    opacity: 0.6;
   }
 
   .nav-overlay {
@@ -166,14 +156,6 @@ const navLinks = [
     transform: translateY(-6.5px) rotate(-45deg);
   }
 
-  .nav-toggle-input:checked ~ header {
-    background-color: var(--color-black);
-  }
-
-  .nav-toggle-input:checked ~ header .nav-toggle-btn .bar {
-    background-color: var(--color-cream);
-  }
-
   .nav-close {
     position: absolute;
     top: 26px;
@@ -181,7 +163,7 @@ const navLinks = [
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: var(--color-charcoal);
+    color: var(--color-ink);
     cursor: pointer;
   }
 
@@ -196,12 +178,12 @@ const navLinks = [
     font-family: var(--font-heading);
     font-style: italic;
     font-size: clamp(1.8rem, 5vw, 2.6rem);
-    color: var(--color-charcoal);
+    color: var(--color-ink);
     transition: color 0.2s ease;
   }
 
   .nav-links a:hover {
-    color: var(--color-terracota);
+    color: var(--color-green);
   }
 
   .nav-cta {

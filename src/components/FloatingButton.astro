@@ -8,7 +8,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/eltiodelasunas';
     href={BOOKSY_URL}
     target="_blank"
     rel="noopener noreferrer"
-    class="floating-btn floating-btn--terracota"
+    class="floating-btn floating-btn--primary"
     aria-label="Reservar cita en Booksy"
     title="Reservar cita"
   >
@@ -24,7 +24,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/eltiodelasunas';
     href={INSTAGRAM_URL}
     target="_blank"
     rel="noopener noreferrer"
-    class="floating-btn floating-btn--black"
+    class="floating-btn floating-btn--secondary"
     aria-label="Síguenos en Instagram"
     title="Instagram"
   >
@@ -62,13 +62,14 @@ const INSTAGRAM_URL = 'https://www.instagram.com/eltiodelasunas';
     transform: translateY(-2px) scale(1.04);
   }
 
-  .floating-btn--terracota {
-    background-color: var(--color-terracota);
-    color: var(--color-cream);
+  .floating-btn--primary {
+    background-color: var(--color-cream);
+    color: var(--color-green);
+    border: 1px solid rgba(22, 36, 27, 0.1);
   }
 
-  .floating-btn--black {
-    background-color: var(--color-black);
+  .floating-btn--secondary {
+    background-color: var(--color-ink);
     color: var(--color-cream);
   }
 

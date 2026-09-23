@@ -11,7 +11,9 @@ const year = new Date().getFullYear();
 <footer class="footer">
   <div class="container footer-inner">
     {hasLogo ? (
-      <img src="/logo.png" alt="El Tío de las Uñas" class="footer-logo" />
+      <span class="footer-logo-badge">
+        <img src="/logo.png" alt="El Tío de las Uñas" class="footer-logo" />
+      </span>
     ) : (
       <span class="footer-logo-placeholder">El Tío de las Uñas</span>
     )}
@@ -31,7 +33,7 @@ const year = new Date().getFullYear();
 
 <style>
   .footer {
-    background-color: var(--color-black);
+    background-color: var(--color-ink);
     padding: 88px 0 64px;
   }
 
@@ -41,6 +43,13 @@ const year = new Date().getFullYear();
     align-items: center;
     text-align: center;
     gap: 18px;
+  }
+
+  .footer-logo-badge {
+    display: inline-flex;
+    background-color: var(--color-cream);
+    padding: 14px 22px;
+    border-radius: 6px;
   }
 
   .footer-logo {
@@ -60,12 +69,12 @@ const year = new Date().getFullYear();
   .footer-line {
     font-family: var(--font-heading);
     font-style: italic;
-    color: rgba(240, 233, 220, 0.85);
+    color: rgba(245, 241, 230, 0.85);
     font-size: 1.05rem;
   }
 
   .footer-handle {
-    color: var(--color-terracota);
+    color: var(--color-green-soft);
     font-style: normal;
     font-family: var(--font-body);
     letter-spacing: 0.04em;
@@ -77,13 +86,13 @@ const year = new Date().getFullYear();
     align-items: center;
     gap: 8px;
     font-size: 0.78rem;
-    color: rgba(240, 233, 220, 0.5);
+    color: rgba(245, 241, 230, 0.5);
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .footer-links a:hover {
-    color: var(--color-terracota);
+    color: var(--color-green-soft);
   }
 
   .footer-sep {

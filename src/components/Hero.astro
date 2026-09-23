@@ -10,7 +10,7 @@ const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-u
   <div class="container hero-content">
     <p class="hero-eyebrow">Gijón · 4,9★ en 269 reseñas</p>
     <h1 class="hero-title">Las uñas que se notan.</h1>
-    <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-terracota hero-cta">
+    <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-cream hero-cta">
       → Reservar cita
     </a>
   </div>
@@ -19,11 +19,11 @@ const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-u
 <style>
   .hero {
     position: relative;
-    min-height: 100svh;
+    min-height: 88svh;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    background-color: var(--color-black);
+    background-color: var(--color-ink);
   }
 
   .hero-bg,
@@ -38,18 +38,18 @@ const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-u
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(13, 11, 10, 0.15) 0%, rgba(13, 11, 10, 0.25) 40%, rgba(13, 11, 10, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(13, 16, 13, 0.1) 0%, rgba(13, 16, 13, 0.25) 40%, rgba(13, 16, 13, 0.88) 100%);
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    padding-bottom: 96px;
-    padding-top: 220px;
+    padding-top: 72px;
+    padding-bottom: 88px;
   }
 
   .hero-eyebrow {
-    color: var(--color-terracota);
+    color: var(--color-green-soft);
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-size: 0.8rem;
@@ -72,7 +72,7 @@ const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-u
 
   @media (max-width: 640px) {
     .hero-content {
-      padding-top: 140px;
+      padding-top: 48px;
       padding-bottom: 56px;
     }
   }
