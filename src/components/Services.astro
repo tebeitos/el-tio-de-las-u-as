@@ -1,0 +1,119 @@
+---
+const services = [
+  {
+    name: 'Manicura + Semipermanente',
+    price: '20€',
+    duration: '1h',
+    description: 'Limado, cutícula y esmaltado que dura semanas.',
+  },
+  {
+    name: 'Refuerzo y Nivelación + Semipermanente',
+    price: '25€',
+    duration: '1h',
+    description: 'Para uñas más resistentes con acabado natural.',
+  },
+  {
+    name: 'Pedicura Semipermanente',
+    price: '25€',
+    duration: '1h',
+    description: 'Tratamiento completo de durezas más esmaltado duradero.',
+  },
+  {
+    name: 'Uñas acrílicas / acrygel / softgel',
+    price: 'Desde 33€',
+    duration: '1h30',
+    description: 'Extensiones con esmaltado francesa o diseño simple.',
+  },
+  {
+    name: 'Forrado con gel sobre uña natural',
+    price: '28€',
+    duration: '1h30',
+    description: 'Para mantener el largo sin riesgo de rotura.',
+  },
+  {
+    name: 'Uñas acrílicas Full Diseño',
+    price: '40€',
+    duration: '2h',
+    description: 'El diseño que imaginas, hecho realidad.',
+  },
+];
+---
+
+<section class="services section" id="servicios">
+  <div class="container">
+    <p class="eyebrow">Servicios</p>
+    <h2 class="section-title">Lo que hacemos</h2>
+
+    <div class="services-grid">
+      {services.map((service) => (
+        <div class="service-card">
+          <div class="service-head">
+            <h3 class="service-name">{service.name}</h3>
+            <span class="service-price">{service.price}</span>
+          </div>
+          <p class="service-duration">{service.duration}</p>
+          <p class="service-description">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background-color: var(--color-dark-secondary);
+  }
+
+  .services-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  .service-card {
+    background-color: var(--color-black);
+    border: 1px solid rgba(201, 168, 76, 0.16);
+    border-radius: 14px;
+    padding: 26px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .service-card:hover {
+    border-color: rgba(201, 168, 76, 0.55);
+    transform: translateY(-4px);
+  }
+
+  .service-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .service-name {
+    font-size: 1.15rem;
+    color: var(--color-bone);
+  }
+
+  .service-price {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .service-duration {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(245, 240, 234, 0.55);
+  }
+
+  .service-description {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: rgba(245, 240, 234, 0.82);
+  }
+</style>

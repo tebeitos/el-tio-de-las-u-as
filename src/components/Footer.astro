@@ -1,0 +1,81 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+const logoPath = path.join(process.cwd(), 'public', 'logo.png');
+const hasLogo = fs.existsSync(logoPath);
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    {hasLogo ? (
+      <img src="/logo.png" alt="El Tío de las Uñas" class="footer-logo" />
+    ) : (
+      <span class="footer-logo-placeholder">El Tío de las Uñas</span>
+    )}
+
+    <p class="footer-text">El Tío de las Uñas · Avenida de la Costa 125, Gijón · @eltiodelasunas</p>
+
+    <nav class="footer-links">
+      <a href="/aviso-legal">Aviso legal</a>
+      <span class="footer-sep">·</span>
+      <a href="/privacidad">Privacidad</a>
+      <span class="footer-sep">·</span>
+      <span>© {year} El Tío de las Uñas</span>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-black);
+    border-top: 1px solid rgba(201, 168, 76, 0.16);
+    padding: 48px 0 96px;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-logo-placeholder {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-gold);
+  }
+
+  .footer-text {
+    color: rgba(245, 240, 234, 0.75);
+    font-size: 0.95rem;
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(245, 240, 234, 0.55);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-gold);
+  }
+
+  .footer-sep {
+    opacity: 0.5;
+  }
+</style>

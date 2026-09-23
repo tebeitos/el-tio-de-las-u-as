@@ -1,0 +1,97 @@
+---
+const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-unas_76596_gijon';
+
+const reviews = [
+  { quote: 'Son todos de 10. Las mejores uñas que me han hecho.', author: 'Natalia' },
+  { quote: 'Trato inmejorable. Totalmente recomendado.', author: 'Laura' },
+  { quote: 'Como siempre, trabajan muy bien. Profesionales con amabilidad y simpatía.', author: 'María Eugenia' },
+];
+---
+
+<section class="reviews section" id="resenas">
+  <div class="container">
+    <p class="eyebrow">Reseñas</p>
+    <div class="rating">
+      <span class="rating-score">4,9★</span>
+      <span class="rating-count">269 reseñas</span>
+    </div>
+
+    <div class="reviews-grid">
+      {reviews.map((review) => (
+        <blockquote class="review-card">
+          <p class="review-quote">&ldquo;{review.quote}&rdquo;</p>
+          <cite class="review-author">— {review.author}</cite>
+        </blockquote>
+      ))}
+    </div>
+
+    <div class="reviews-cta">
+      <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-bone">
+        Ver todas las reseñas en Booksy
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    background-color: var(--color-black);
+    text-align: center;
+  }
+
+  .rating {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .rating-score {
+    font-family: var(--font-heading);
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    color: var(--color-gold);
+    font-weight: 700;
+  }
+
+  .rating-count {
+    font-size: 1rem;
+    color: rgba(245, 240, 234, 0.7);
+    letter-spacing: 0.02em;
+  }
+
+  .reviews-grid {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    text-align: left;
+  }
+
+  .review-card {
+    margin: 0;
+    background-color: var(--color-dark-secondary);
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+  }
+
+  .review-quote {
+    font-size: 1.02rem;
+    color: var(--color-bone);
+    font-style: italic;
+  }
+
+  .review-author {
+    display: block;
+    margin-top: 18px;
+    font-style: normal;
+    color: var(--color-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .reviews-cta {
+    margin-top: 48px;
+  }
+</style>
