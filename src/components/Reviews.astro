@@ -9,38 +9,43 @@ const reviews = [
 ---
 
 <section class="reviews section" id="resenas">
-  <div class="container">
+  <div class="container reviews-top">
     <p class="eyebrow">Reseñas</p>
     <div class="rating">
       <span class="rating-score">4,9★</span>
       <span class="rating-count">269 reseñas</span>
     </div>
+  </div>
 
-    <div class="reviews-grid">
-      {reviews.map((review) => (
-        <blockquote class="review-card">
-          <p class="review-quote">&ldquo;{review.quote}&rdquo;</p>
-          <cite class="review-author">— {review.author}</cite>
-        </blockquote>
-      ))}
-    </div>
+  <div class="reviews-list">
+    {reviews.map((review, i) => (
+      <>
+        <div class="container">
+          <blockquote class="review-quote-block">
+            <p class="quote">&ldquo;{review.quote}&rdquo;</p>
+            <cite class="quote-cite">— {review.author}</cite>
+          </blockquote>
+        </div>
+        {i < reviews.length - 1 && <div class="review-divider"></div>}
+      </>
+    ))}
+  </div>
 
-    <div class="reviews-cta">
-      <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-bone">
-        Ver todas las reseñas en Booksy
-      </a>
-    </div>
+  <div class="container reviews-cta">
+    <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+      → Ver todas las reseñas en Booksy
+    </a>
   </div>
 </section>
 
 <style>
   .reviews {
-    background-color: var(--color-black);
+    background-color: var(--color-cream);
     text-align: center;
   }
 
   .rating {
-    margin-top: 12px;
+    margin-top: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,49 +54,35 @@ const reviews = [
 
   .rating-score {
     font-family: var(--font-heading);
+    font-style: italic;
     font-size: clamp(2.6rem, 6vw, 4rem);
-    color: var(--color-gold);
-    font-weight: 700;
+    color: var(--color-terracota);
   }
 
   .rating-count {
-    font-size: 1rem;
-    color: rgba(245, 240, 234, 0.7);
+    font-size: 0.95rem;
+    color: rgba(42, 37, 33, 0.6);
     letter-spacing: 0.02em;
   }
 
-  .reviews-grid {
-    margin-top: 52px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    text-align: left;
+  .reviews-list {
+    margin-top: 72px;
   }
 
-  .review-card {
-    margin: 0;
-    background-color: var(--color-dark-secondary);
-    border-radius: 14px;
-    padding: 28px;
-    border: 1px solid rgba(201, 168, 76, 0.14);
+  .review-quote-block {
+    margin: 0 auto;
+    padding: 56px 0;
   }
 
-  .review-quote {
-    font-size: 1.02rem;
-    color: var(--color-bone);
-    font-style: italic;
-  }
-
-  .review-author {
-    display: block;
-    margin-top: 18px;
-    font-style: normal;
-    color: var(--color-gold);
-    font-weight: 600;
-    font-size: 0.9rem;
+  .review-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(42, 37, 33, 0.14);
+    max-width: 1180px;
+    margin: 0 auto;
   }
 
   .reviews-cta {
-    margin-top: 48px;
+    margin-top: 72px;
   }
 </style>

@@ -1,45 +1,87 @@
 ---
 const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-unas_76596_gijon';
+const INSTAGRAM_URL = 'https://www.instagram.com/eltiodelasunas';
 ---
 
-<a
-  href={BOOKSY_URL}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="floating-btn"
-  aria-label="Reservar cita en Booksy"
->
-  Reservar
-</a>
+<div class="floating-stack">
+  <a
+    href={BOOKSY_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-btn floating-btn--terracota"
+    aria-label="Reservar cita en Booksy"
+    title="Reservar cita"
+  >
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4.5" width="18" height="16" rx="1.5"></rect>
+      <line x1="3" y1="9.5" x2="21" y2="9.5"></line>
+      <line x1="7.5" y1="2.5" x2="7.5" y2="6.5"></line>
+      <line x1="16.5" y1="2.5" x2="16.5" y2="6.5"></line>
+      <path d="M8 14l2.5 2.5L16 11"></path>
+    </svg>
+  </a>
+  <a
+    href={INSTAGRAM_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-btn floating-btn--black"
+    aria-label="Síguenos en Instagram"
+    title="Instagram"
+  >
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+      <circle cx="12" cy="12" r="4.2"></circle>
+      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"></circle>
+    </svg>
+  </a>
+</div>
 
 <style>
-  .floating-btn {
+  .floating-stack {
     position: fixed;
     right: 20px;
     bottom: 20px;
     z-index: 50;
-    background-color: var(--color-gold);
-    color: var(--color-black);
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 14px 26px;
-    border-radius: 999px;
-    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    box-shadow: 0 10px 26px -8px rgba(0, 0, 0, 0.45);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .floating-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 34px -8px rgba(201, 168, 76, 0.55);
+    transform: translateY(-2px) scale(1.04);
+  }
+
+  .floating-btn--terracota {
+    background-color: var(--color-terracota);
+    color: var(--color-cream);
+  }
+
+  .floating-btn--black {
+    background-color: var(--color-black);
+    color: var(--color-cream);
   }
 
   @media (max-width: 480px) {
-    .floating-btn {
+    .floating-stack {
       right: 14px;
       bottom: 14px;
-      padding: 12px 20px;
-      font-size: 0.85rem;
+      gap: 10px;
+    }
+
+    .floating-btn {
+      width: 46px;
+      height: 46px;
     }
   }
 </style>

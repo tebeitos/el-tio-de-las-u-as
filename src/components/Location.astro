@@ -4,7 +4,7 @@ const address = 'Avenida de la Costa 125, 33203 Gijón';
 const mapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 ---
 
-<section class="location section" id="donde-estamos">
+<section class="location section section--soft" id="donde-estamos">
   <div class="container location-inner">
     <div class="location-info">
       <p class="eyebrow">Dónde estamos</p>
@@ -17,8 +17,8 @@ const mapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(addres
         <p>Lunes a viernes: 10:00-14:00 · 16:00-20:00</p>
       </div>
 
-      <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-gold location-cta">
-        Reservar cita
+      <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-terracota location-cta">
+        → Reservar cita
       </a>
     </div>
 
@@ -38,49 +38,46 @@ const mapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(addres
 </section>
 
 <style>
-  .location {
-    background-color: var(--color-black);
-  }
-
   .location-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 64px;
     align-items: center;
   }
 
   .location-address {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    color: var(--color-bone);
+    margin-top: 24px;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-family: var(--font-heading);
+    color: var(--color-charcoal);
   }
 
   .location-hours {
-    margin-top: 28px;
+    margin-top: 32px;
   }
 
   .location-hours-title {
-    color: var(--color-gold);
-    font-weight: 600;
-    font-size: 0.85rem;
+    color: var(--color-terracota);
+    font-weight: 700;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
   }
 
   .location-hours p:not(.location-hours-title) {
-    margin-top: 8px;
-    color: rgba(245, 240, 234, 0.82);
+    margin-top: 10px;
+    color: rgba(42, 37, 33, 0.75);
   }
 
   .location-cta {
-    margin-top: 36px;
+    margin-top: 40px;
   }
 
   .location-map {
     aspect-ratio: 4 / 3;
-    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    filter: grayscale(0.3) contrast(1.05);
   }
 
   @media (max-width: 820px) {

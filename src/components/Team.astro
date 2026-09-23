@@ -8,47 +8,54 @@ const team = [
   {
     name: 'Josepth Suarez',
     photo: '/josepth-suarez.jpg',
-    bio: 'Próximamente',
+    bio: 'Próximamente.',
   },
 ];
 ---
 
 <section class="team section" id="equipo">
-  <div class="container">
+  <div class="container team-intro">
     <p class="eyebrow">Equipo</p>
     <h2 class="section-title">Quiénes somos</h2>
+  </div>
 
-    <div class="team-grid">
-      {team.map((member) => (
-        <div class="team-card">
-          <div class="team-photo-wrap">
-            <img src={member.photo} alt={member.name} class="team-photo" />
-          </div>
+  <div class="team-grid">
+    {team.map((member) => (
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src={member.photo} alt={member.name} class="team-photo" />
+        </div>
+        <div class="team-text">
           <h3 class="team-name">{member.name}</h3>
           <p class="team-bio">{member.bio}</p>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 </section>
 
 <style>
   .team {
-    background-color: var(--color-dark-secondary);
+    background-color: var(--color-cream);
+  }
+
+  .team-intro {
+    margin-bottom: 56px;
   }
 
   .team-grid {
-    margin-top: 44px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 36px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card {
+    display: flex;
+    flex-direction: column;
   }
 
   .team-photo-wrap {
     aspect-ratio: 4 / 5;
-    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(201, 168, 76, 0.2);
   }
 
   .team-photo {
@@ -57,15 +64,30 @@ const team = [
     object-fit: cover;
   }
 
+  .team-text {
+    padding: 32px 40px;
+  }
+
   .team-name {
-    margin-top: 20px;
-    font-size: 1.3rem;
-    color: var(--color-gold);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--color-charcoal);
   }
 
   .team-bio {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    color: rgba(245, 240, 234, 0.82);
+    margin-top: 14px;
+    font-size: 0.98rem;
+    color: rgba(42, 37, 33, 0.75);
+  }
+
+  @media (max-width: 720px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .team-text {
+      padding: 28px 24px;
+    }
   }
 </style>

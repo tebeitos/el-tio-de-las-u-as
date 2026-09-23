@@ -1,0 +1,51 @@
+---
+const BOOKSY_URL = 'https://booksy.com/es-es/83914_el-tio-de-las-unas_salon-de-unas_76596_gijon';
+const INSTAGRAM_URL = 'https://www.instagram.com/eltiodelasunas';
+---
+
+<section class="closing-cta section">
+  <div class="container closing-cta-inner">
+    <h2 class="closing-cta-title">¿Lista para lucir unas uñas de escándalo?</h2>
+    <p class="closing-cta-subtitle">Reserva online en menos de un minuto.</p>
+
+    <div class="closing-cta-buttons">
+      <a href={BOOKSY_URL} target="_blank" rel="noopener noreferrer" class="btn btn-terracota">
+        → Reservar en Booksy
+      </a>
+      <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" class="btn btn-black">
+        → Síguenos en Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .closing-cta {
+    background-color: var(--color-cream-soft);
+    text-align: center;
+  }
+
+  .closing-cta-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--color-charcoal);
+    max-width: 18ch;
+    margin: 0 auto;
+  }
+
+  .closing-cta-subtitle {
+    margin-top: 18px;
+    font-size: 1.05rem;
+    color: rgba(42, 37, 33, 0.7);
+  }
+
+  .closing-cta-buttons {
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+</style>
